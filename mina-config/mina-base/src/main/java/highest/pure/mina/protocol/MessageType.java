@@ -4,7 +4,8 @@ public enum MessageType {
 
     NONE(0),
     HEARTBEAT(1),
-    COMMAND(2);
+    CONFIGURATION(2),
+    COMMAND(3);
 
     private int messageType = 0;
 
@@ -19,6 +20,10 @@ public enum MessageType {
     public static MessageType fromInt(int type) {
         if (type == HEARTBEAT.getMessageType()) {
             return HEARTBEAT;
+        } else if (type == CONFIGURATION.getMessageType()) {
+            return CONFIGURATION;
+        } else if (type == COMMAND.getMessageType()) {
+            return COMMAND;
         }
         return NONE;
     }
